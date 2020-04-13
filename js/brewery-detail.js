@@ -23,6 +23,7 @@ export default class BreweryDetail extends LitElement {
   render() {
     return html`<style>
         * {
+          box-sizing: border-box;
           font-family: Roboto;
         }
         .card {
@@ -36,10 +37,11 @@ export default class BreweryDetail extends LitElement {
           min-height: 200px;
           margin-top: 5px;
           position: relative;
+          border-radius: 20px;
         }
 
         .card h2 {
-          padding: 20px 0 20px 0;
+          padding: 20px 0 0 0;
         }
 
         .type {
@@ -60,6 +62,7 @@ export default class BreweryDetail extends LitElement {
           position: absolute;
           bottom: 0;
           left: 0;
+          border-radius: 0 0 20px 20px;
         }
 
         .card button:hover {
@@ -70,7 +73,7 @@ export default class BreweryDetail extends LitElement {
       html`
         <div class="card">
           <h2>${this.brewery.name}</h2>
-          <p class="type">${this.brewery.brewery_type}</p>
+          <p class="type">${this.brewery.type}</p>
           <p>${this.brewery.city}</p>
           <button @click="${this.toggleVisited}">
             ${this.brewery.visited ? "Visited" : "Not Visited"}
